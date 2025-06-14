@@ -1,0 +1,327 @@
+:root {
+    --bg-color1: #212529;
+    --bg-color2: #2a2b2d;
+    --aqi-1: #d4e157;
+    --aqi-2: #ffee58;
+    --aqi-3: #ffca28;
+    --aqi-4: #ff7043;
+    --aqi-5: #ef5350;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background-color: var(--bg-color1);
+    color: #fff;
+    font-family: sans-serif;
+    padding: 0 15px;
+}
+
+.header {
+    position: sticky;
+    top: 0;
+    background-color: var(--bg-color1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 15px 0;
+
+    & #city_input {
+        background-color: var(--bg-color2);
+        border: none;
+        padding: 12px;
+        font-size: 16px;
+        border-radius: 25px;
+        color: #fff;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    & #searchBtn {
+        border: none;
+        font-size: 16px;
+        padding: 12px;
+        border-radius: 25px;
+        background-color: #fff;
+        cursor: pointer;
+    }
+    #searchBtn:hover{
+        background: rgba(0, 0, 0, 0.1); /* noir avec 50% de transparence */
+        color: white;
+        transition: 0.2s;
+        border-radius: 25px;
+    };
+
+    & #locationBtn {
+        border: none;
+        font-size: 16px;
+        padding: 12px;
+        border-radius: 25px;
+        background-color: #ea6a4b;
+        cursor: pointer;
+    }
+    #locationBtn:hover{
+        background-color: rgba(234, 106, 75, 0.5);
+        color: white;
+        transition: 0.2s;
+        border-radius: 25px;
+    };
+}
+
+.card {
+    background-color: var(--bg-color2);
+    padding: 15px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    width: 100%;
+
+    & #short-line {
+        width: 100%;
+        height: 2px;
+        background-color: #fff;
+        margin: 20px auto;
+
+    }
+
+    & p {
+        font-size: 14px;
+        color: #999;
+    }
+
+    & h2 {
+        font-size: 32px;
+        font-weight: 500;
+    }
+}
+
+
+.weather-data {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+
+    & .weather-left {
+        grid-column: span 1;
+
+        & .current-weather {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            & h2 {
+                margin: 7px 0;
+            }
+
+            & p {
+                color: #fff;
+            }
+        }
+
+        & .card-footer p {
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+        .card-footer i{
+            margin-right: 10px;
+        }
+
+        & .forecast-item {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            place-items: center;
+            & .icon-wrapper {
+                display: flex;
+                align-items: center;
+                gap: 15px;
+                padding: 28px 0px 0px 0px;
+            & p{
+                margin: 0px 20px 0px 60px;
+                align-items: center;
+            }
+            }
+        }
+    }
+
+}
+
+& .weather-right {
+    grid-column: span 3;
+
+    & h2 {
+        margin-bottom: 10px;
+    }
+
+    & .highlights {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: 15px;
+
+        & .card:nth-of-type(1),
+        & .card:nth-of-type(2) {
+            grid-column: span 2;
+        }
+    }
+
+    & .card-head {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+    }
+
+    & .air-index {
+        color: #000;
+        padding: 5px 10px;
+        border-radius: 15px;
+
+        &.aqi-1 {
+            background-color: var(--aqi-1);
+        }
+
+        &.aqi-2 {
+            background-color: var(--aqi-2);
+        }
+
+        &.aqi-3 {
+            background-color: var(--aqi-3);
+        }
+
+        &.aqi-4 {
+            background-color: var(--aqi-4);
+        }
+
+        &.aqi-5 {
+            background-color: var(--aqi-5);
+        }
+    }
+
+    & .air-indices {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-column: span 5;
+        place-items: center;
+
+        & p {
+            text-align: center;
+        }
+    }
+
+    & .sunrise-sunset {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        & .item {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 50px;
+            & h2 {
+                margin-top: 15px;
+            }
+        }
+    }
+    & #Humidity-card {
+        grid-column: span 1;
+        padding-top: 20px;
+        & i{
+            padding-top: 10px;
+        }
+    }
+    & .card-item{
+        display: flex;
+        justify-content:space-between;
+    }
+
+
+}
+.hourly-forecast{
+    display: grid ;
+    grid-template-columns: repeat(8,1fr);
+    column-gap: 10px;
+
+}
+.saved-cities-section {
+    margin-bottom: 30px;
+    padding: 20px;
+    background:#2a2b2d;
+    border-radius: 10px;
+    height: 190%;
+}
+
+h2 {
+    color: #fff;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.saved-cities-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+}
+
+.saved-city-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background:#212529;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.saved-city-item span {
+    font-weight: 600;
+    color: #fff;
+}
+
+.saved-city-actions {
+    display: flex;
+    gap: 5px;
+    .view-city{
+    background-color: transparent;
+    border: none;
+    color:#fff;
+    cursor: pointer;
+    }
+    .edit-city{
+    background-color: transparent;
+    border: none;
+    color:#fff;
+    cursor: pointer;
+    }
+    .delete-city{
+    background-color: transparent;
+    border: none;
+    color:#fff;
+    cursor: pointer;
+    }
+
+    .view-city:hover{
+        background-color: rgba(255, 255, 255, 0.3); 
+        border-radius: 6px;
+        transition: 0.5s;
+    }
+    .edit-city:hover{
+        background-color: rgba(255, 255, 255, 0.3); 
+        border-radius: 6px;
+        transition: 0.5s;
+    }
+    .delete-city:hover{
+        background-color: rgba(255, 255, 255, 0.3); 
+        border-radius: 6px;
+        transition: 0.5s;
+    }
+}
+
+.saved-city-actions button {
+    padding: 5px 10px;
+}
+
