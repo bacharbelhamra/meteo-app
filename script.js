@@ -198,9 +198,9 @@ function showCitys() {
     div.innerHTML = `
       <span>${ville}</span>
       <div class="saved-city-actions">
-        <button class="view-city" data-ville="${ville}"><i class="fa fa-eye"></i></button>
-        <button class="edit-city" data-ville="${ville}"><i class="fa fa-pen"></i></button>
-        <button class="delete-city" data-ville="${ville}"><i class="fa fa-trash"></i></button>
+        <button class="view-city"  title="Voir" data-ville="${ville}"><i class="fa fa-eye"></i></button>
+        <button class="edit-city" title="Modifier" data-ville="${ville}"><i class="fa fa-pen"></i></button>
+        <button class="delete-city" title="Supprimer" data-ville="${ville}"><i class="fa fa-trash"></i></button>
       </div>`;
     savedCitiesList.appendChild(div);
   }
